@@ -16,7 +16,6 @@ class leProposicao:
     def __repr__(self):
         return self.name
     
-# --- Conectivos Lógicos (Operadores Binários) ---
 
 class Implies:
     """Representa o conectivo de implicação (->). A -> B."""

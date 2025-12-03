@@ -16,6 +16,9 @@ class leProposicao:
     def __repr__(self):
         return self.name
     
+    def pegaNome(self):
+        return self.name
+    
 
 class Implies:
     """Representa o conectivo de implicação (->). A -> B."""
@@ -35,6 +38,9 @@ class Implies:
 
     def __repr__(self):
         return f"({self.left} -> {self.right})"
+    
+    def pegaPartes(self):
+        return self.left.pegaNome().union(self.right.pegaNome())
 
 class And:
     """Representa o conectivo de conjunção (&). A & B."""
@@ -50,6 +56,9 @@ class And:
 
     def __repr__(self):
         return f"({self.left} & {self.right})"
+    
+    def pegaPartes(self):
+        return self.left.pegaNome().union(self.right.pegaNome())
 
 
 class Not:
@@ -64,6 +73,9 @@ class Not:
 
     def __repr__(self):
         return f"~{self.operand}"
+    
+    def pegaPartes(self):
+        return self.operand.pegaNome()
 
 class Or:
     """Representa o conectivo de disjunção (|). A | B."""
@@ -80,6 +92,9 @@ class Or:
     def __repr__(self):
         return f"({self.left} | {self.right})"
     
+    def pegaPartes(self):
+        return self.left.pegaNome().union(self.right.pegaNome())
+    
 class Equivalent:
     """Representa o conectivo de bicondicional (<->). A <-> B."""
     def __init__(self, left, right):
@@ -94,3 +109,6 @@ class Equivalent:
 
     def __repr__(self):
         return f"({self.left} <-> {self.right})"
+    
+    def pegaPartes(self):
+        return self.left.pegaNome().union(self.right.pegaNome())

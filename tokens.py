@@ -13,7 +13,10 @@ def token_Implies(tokens):
     return Implies(tokens[0], tokens[2])
 
 def token_Equivalent(tokens):
-    return Implies(tokens[0], tokens[2])
+    return Equivalent(tokens[0], tokens[2])
 
 def token_Leitura(tokens):
     return leProposicao(tokens[0])
+
+def token_Desemp(tokens):
+    return tokens[0]
